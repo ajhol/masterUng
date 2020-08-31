@@ -28,15 +28,50 @@ class _HomeState extends State<Home> {
     );
   } //esyyyr
 
+  Widget signInButton() {
+    return RaisedButton(
+      color: Colors.blue.shade700,
+      onPressed: () {},
+      child: Text(
+        'Sign In',
+        style: TextStyle(color: Colors.white),
+      ),
+    );
+  }
+
+  Widget signUpButton() {
+    return OutlineButton(
+      onPressed: () {},
+      child: Text('Sign Up'),
+    );
+  }
+
+  Widget showButton() {
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        signInButton(),
+        SizedBox(
+          width: 8,
+        ),
+        signUpButton(),
+      ],
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: Center(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[showLogo(), showAppName()],
-          ),
+          child: Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
+            showLogo(),
+            showAppName(),
+            SizedBox(
+              height: 18,
+            ),
+            showButton(),
+          ]),
         ),
       ),
     );
