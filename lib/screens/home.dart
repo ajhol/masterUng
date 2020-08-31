@@ -6,6 +6,11 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  //Method
+  Widget showLogo() {
+    return Image.asset('images/logo.png');
+  }
+
   Widget showAppName() {
     return Text('สวัสดีครับ !!!!!ชาวโลก');
   } //esyyyr
@@ -17,7 +22,7 @@ class _HomeState extends State<Home> {
         child: Center(
           child: Column(
             mainAxisSize: MainAxisSize.min,
-            children: <Widget>[showAppName(), showAppName(), showAppName()],
+            children: <Widget>[showLogo(), showAppName(), showAppName()],
           ),
         ),
       ),
