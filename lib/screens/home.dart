@@ -63,15 +63,23 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Center(
-          child: Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
-            showLogo(),
-            showAppName(),
-            SizedBox(
-              height: 18,
+        child: Container(
+          decoration: BoxDecoration(
+            gradient: RadialGradient(
+              colors: [Colors.white, Colors.yellow.shade600],
+              radius: .5,
             ),
-            showButton(),
-          ]),
+          ),
+          child: Center(
+            child: Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
+              showLogo(),
+              showAppName(),
+              SizedBox(
+                height: 18,
+              ),
+              showButton(),
+            ]),
+          ),
         ),
       ),
     );
