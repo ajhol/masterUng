@@ -10,6 +10,7 @@ class _RegisterState extends State<Register> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.yellow.shade600,
         title: Text('Register'),
       ),
       body: Text('body'),
