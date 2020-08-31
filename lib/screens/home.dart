@@ -8,11 +8,23 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   //Method
   Widget showLogo() {
-    return Image.asset('images/logo.png');
+    return Container(
+      width: 150.0,
+      height: 150.0,
+      child: Image.asset('images/logo.png'),
+    );
   }
 
   Widget showAppName() {
-    return Text('สวัสดีครับ !!!!!ชาวโลก');
+    return Text(
+      'สวัสดี Hello Loh Shop',
+      style: TextStyle(
+        fontSize: 30,
+        color: Colors.blue.shade700,
+        fontWeight: FontWeight.bold,
+        fontStyle: FontStyle.italic,
+      ),
+    );
   } //esyyyr
 
   @override
@@ -22,7 +34,7 @@ class _HomeState extends State<Home> {
         child: Center(
           child: Column(
             mainAxisSize: MainAxisSize.min,
-            children: <Widget>[showLogo(), showAppName(), showAppName()],
+            children: <Widget>[showLogo(), showAppName()],
           ),
         ),
       ),
