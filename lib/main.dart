@@ -1,6 +1,7 @@
 import 'package:ex1/screens/home.dart';
 import 'package:flutter/material.dart';
 
+//test git
 void main() {
   runApp(MyApp());
 }
