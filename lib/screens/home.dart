@@ -17,12 +17,13 @@ class _HomeState extends State<Home> {
 
   Widget showAppName() {
     return Text(
-      'สวัสดี Hello Loh Shop',
+      'Hello Loh Shop',
       style: TextStyle(
         fontSize: 30,
         color: Colors.blue.shade700,
         fontWeight: FontWeight.bold,
         fontStyle: FontStyle.italic,
+        fontFamily: 'Mansalva',
       ),
     );
   } //esyyyr
