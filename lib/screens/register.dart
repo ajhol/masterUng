@@ -18,6 +18,28 @@ class _RegisterState extends State<Register> {
     );
   }
 
+  Widget nameText() {
+    return TextFormField(
+      decoration: InputDecoration(
+        icon: Icon(
+          Icons.face,
+          color: Colors.purple,
+          size: 50,
+        ),
+        labelText: 'Display Name :',
+        labelStyle: TextStyle(
+          color: Colors.purple,
+          fontWeight: FontWeight.bold,
+        ),
+        helperText: 'Type Your Nick Name for Display',
+        helperStyle: TextStyle(
+          color: Colors.purple,
+          fontStyle: FontStyle.italic,
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +48,12 @@ class _RegisterState extends State<Register> {
         title: Text('Register'),
         actions: [registerButton()],
       ),
-      body: Text('body'),
+      body: ListView(
+        padding: EdgeInsets.all(30),
+        children: [
+          nameText(),
+        ],
+      ),
     );
   }
 }
