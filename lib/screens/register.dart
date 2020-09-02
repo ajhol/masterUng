@@ -8,6 +8,8 @@ class Register extends StatefulWidget {
 class _RegisterState extends State<Register> {
 // Explict
   final formKey = GlobalKey<FormState>();
+  String nameString, emailString, passwordString;
+
 // Method
   Widget registerButton() {
     return IconButton(
@@ -16,6 +18,8 @@ class _RegisterState extends State<Register> {
         print('You Click Upload');
         if (formKey.currentState.validate()) {
           formKey.currentState.save();
+          print(
+              'name = $nameString,email = $emailString,password = $passwordString');
         }
       },
     );
@@ -47,6 +51,9 @@ class _RegisterState extends State<Register> {
         } else {
           return null;
         }
+      },
+      onSaved: (String value) {
+        nameString = value.trim();
       },
     );
   }
@@ -80,6 +87,9 @@ class _RegisterState extends State<Register> {
         }
         //if(!((value.contains('@'))&&(value.contains('.')))
       },
+      onSaved: (String value) {
+        emailString = value.trim();
+      },
     );
   }
 
@@ -109,6 +119,9 @@ class _RegisterState extends State<Register> {
         } else {
           return null;
         }
+      },
+      onSaved: (String value) {
+        passwordString = value.trim();
       },
     );
   }
