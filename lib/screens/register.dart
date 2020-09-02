@@ -43,6 +43,7 @@ class _RegisterState extends State<Register> {
 
   Widget emailText() {
     return TextFormField(
+      keyboardType: TextInputType.emailAddress,
       style: TextStyle(color: Colors.green.shade800),
       decoration: InputDecoration(
         icon: Icon(
@@ -66,7 +67,7 @@ class _RegisterState extends State<Register> {
 
   Widget passwordText() {
     return TextFormField(
-      style: TextStyle(color: Colors.purple),
+      style: TextStyle(color: Colors.blue.shade800),
       decoration: InputDecoration(
         icon: Icon(
           Icons.lock,
@@ -78,9 +79,9 @@ class _RegisterState extends State<Register> {
           color: Colors.blue.shade800,
           fontWeight: FontWeight.bold,
         ),
-        helperText: 'Type Your Nick Name for Display',
+        helperText: 'Type Your password more 6 charactor',
         helperStyle: TextStyle(
-          color: Colors.purple,
+          color: Colors.blue.shade800,
           fontStyle: FontStyle.italic,
         ),
       ),
@@ -100,6 +101,7 @@ class _RegisterState extends State<Register> {
         children: [
           nameText(),
           emailText(),
+          passwordText(),
         ],
       ),
     );
