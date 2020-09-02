@@ -7,13 +7,16 @@ class Register extends StatefulWidget {
 
 class _RegisterState extends State<Register> {
 // Explict
-
+  final formKey = GlobalKey<FormState>();
 // Method
   Widget registerButton() {
     return IconButton(
       icon: Icon(Icons.cloud_upload),
       onPressed: () {
         print('You Click Upload');
+        if (formKey.currentState.validate()) {
+          formKey.currentState.save();
+        }
       },
     );
   }
@@ -38,6 +41,13 @@ class _RegisterState extends State<Register> {
           fontStyle: FontStyle.italic,
         ),
       ),
+      validator: (String value) {
+        if (value.isEmpty) {
+          return 'Please fill Your Name in the Blank';
+        } else {
+          return null;
+        }
+      },
     );
   }
 
@@ -62,6 +72,14 @@ class _RegisterState extends State<Register> {
           fontStyle: FontStyle.italic,
         ),
       ),
+      validator: (String value) {
+        if (!((value.contains('@')) && (value.contains('.')))) {
+          return 'Please Type Email in Exp. you@email.com';
+        } else {
+          return null;
+        }
+        //if(!((value.contains('@'))&&(value.contains('.')))
+      },
     );
   }
 
@@ -85,6 +103,13 @@ class _RegisterState extends State<Register> {
           fontStyle: FontStyle.italic,
         ),
       ),
+      validator: (String value) {
+        if (value.length < 6) {
+          return 'Password More 6 Charactor';
+        } else {
+          return null;
+        }
+      },
     );
   }
 
@@ -96,13 +121,16 @@ class _RegisterState extends State<Register> {
         title: Text('Register'),
         actions: [registerButton()],
       ),
-      body: ListView(
-        padding: EdgeInsets.all(30),
-        children: [
-          nameText(),
-          emailText(),
-          passwordText(),
-        ],
+      body: Form(
+        key: formKey,
+        child: ListView(
+          padding: EdgeInsets.all(30),
+          children: [
+            nameText(),
+            emailText(),
+            passwordText(),
+          ],
+        ),
       ),
     );
   }
