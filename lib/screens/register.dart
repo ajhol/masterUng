@@ -20,6 +20,7 @@ class _RegisterState extends State<Register> {
 
   Widget nameText() {
     return TextFormField(
+      style: TextStyle(color: Colors.purple),
       decoration: InputDecoration(
         icon: Icon(
           Icons.face,
@@ -29,6 +30,52 @@ class _RegisterState extends State<Register> {
         labelText: 'Display Name :',
         labelStyle: TextStyle(
           color: Colors.purple,
+          fontWeight: FontWeight.bold,
+        ),
+        helperText: 'Type Your Nick Name for Display',
+        helperStyle: TextStyle(
+          color: Colors.purple,
+          fontStyle: FontStyle.italic,
+        ),
+      ),
+    );
+  }
+
+  Widget emailText() {
+    return TextFormField(
+      style: TextStyle(color: Colors.green.shade800),
+      decoration: InputDecoration(
+        icon: Icon(
+          Icons.email,
+          color: Colors.green.shade800,
+          size: 50,
+        ),
+        labelText: 'Email :',
+        labelStyle: TextStyle(
+          color: Colors.green.shade800,
+          fontWeight: FontWeight.bold,
+        ),
+        helperText: 'Type Your Email',
+        helperStyle: TextStyle(
+          color: Colors.green.shade800,
+          fontStyle: FontStyle.italic,
+        ),
+      ),
+    );
+  }
+
+  Widget passwordText() {
+    return TextFormField(
+      style: TextStyle(color: Colors.purple),
+      decoration: InputDecoration(
+        icon: Icon(
+          Icons.lock,
+          color: Colors.blue.shade800,
+          size: 50,
+        ),
+        labelText: 'Password :',
+        labelStyle: TextStyle(
+          color: Colors.blue.shade800,
           fontWeight: FontWeight.bold,
         ),
         helperText: 'Type Your Nick Name for Display',
@@ -52,6 +99,7 @@ class _RegisterState extends State<Register> {
         padding: EdgeInsets.all(30),
         children: [
           nameText(),
+          emailText(),
         ],
       ),
     );
