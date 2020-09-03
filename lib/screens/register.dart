@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart'
+import 'package:firebase_auth/firebase_auth.dart';
 
 class Register extends StatefulWidget {
   @override
@@ -21,10 +21,24 @@ class _RegisterState extends State<Register> {
           formKey.currentState.save();
           print(
               'name = $nameString,email = $emailString,password = $passwordString');
-              
+          registerThread();
         }
       },
     );
+  }
+
+  Future<void> registerThread() async {
+    FirebaseAuth firebaseAuth = FirebaseAuth.instance;
+    await firebaseAuth
+        .createUserWithEmailAndPassword(
+            email: emailString, password: passwordString)
+        .then((response) {
+      print('Register Succes for Email = $emailString');
+    }).catchError((response) {
+      String title = response.code;
+      String message = response.message;
+      print('title = $title,message =$message');
+    });
   }
 
   Widget nameText() {
