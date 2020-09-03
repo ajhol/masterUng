@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart'
 
 class Register extends StatefulWidget {
   @override
@@ -20,6 +21,7 @@ class _RegisterState extends State<Register> {
           formKey.currentState.save();
           print(
               'name = $nameString,email = $emailString,password = $passwordString');
+              
         }
       },
     );
